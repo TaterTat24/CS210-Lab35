@@ -1,7 +1,7 @@
 /** lab35.c
 * ===========================================================  
-* Name: FIRST LAST, DATE
-* Section: SECTION
+* Name: Benjamin Tat
+* Section: T6
 * Project: Lab 35
 * ===========================================================  */
 
@@ -29,8 +29,19 @@ void readFile(char* filename, int numTimes) {
     fclose(file);
 }
 
+// Reminder
+// argc = an int that represents the # of arguments
+// argv = an array of strings that contains the arguments themselves
 
 // Modify this function to use command line arguments
-int main() {
+int main(int argc, char const *argv[]) {
+    // Check number of arguments                                                  
+    if( argc != 3 ) {
+        printf("Incorrect number of arguments: %d", argc);
+        return 1; // 1 indicates error                                              
+    }
 
+    readFile(argv[1], atoi(argv[2]));
+
+    return 0;
 }
